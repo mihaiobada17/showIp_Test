@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Display Hostname</title>
+  <title>IP Address Lookup</title>
 </head>
 <body>
-<div id="hostname"></div>
-<script>
-const hostnameDiv = document.getElementById("hostname");
-hostnameDiv.innerText = `Hostname: ${location.hostname}`;
-</script>
+  <h1>IP Address Lookup</h1>
+  <p>Your IP address is: <span id="ip-address"></span></p>
+  <p>Your country is: <span id="country"></span></p>
+  <p>Your hostname is: <span id="hostname"></span></p>
+
+  <script>
+    fetch('https://ipinfo.io/json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ip-address').textContent = data.ip;
+        document.getElementById('country').textContent = data.country;
+        document.getElementById('hostname').textContent = data.hostname;
+      })
+      .catch(error => console.error(error));
+  </script>
 </body>
 </html>
