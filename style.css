@@ -1,0 +1,23 @@
+.ip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+.label {
+    margin-right: 10px;
+}
+
+.value {
+    margin-right: 10px;
+}
+
+.flag-icon {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
